@@ -43,7 +43,7 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Rate limiting variables
-BATCH_SIZE = 15
+BATCH_SIZE = 20
 BATCH_WAIT_TIME = 60  # seconds
 
 def init_database():
@@ -120,10 +120,11 @@ def generate_filename(image_path):
         Analyze this image and generate a short, descriptive filename (without extension) that captures the essence of the image.
         
         Requirements:
+        - If the image is a photo of any anime character, use the character's name.
         - Use only lowercase letters, numbers, and hyphens
-        - Maximum 15 characters
+        - Maximum 20 characters
         - Be descriptive but concise
-        - Examples: "starry-sky", "red-car", "anime-girl", "mountain-peak"
+        - Examples: "Yelan",  "Senjougahara", "starry-sky", "red-car", "anime-girl", "mountain-peak"
         
         Just respond with the filename only, no explanation.
         """
